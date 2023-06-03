@@ -1,13 +1,13 @@
 import requests
 import json
 import functions as f
+from fastapi import FastAPI
 
 
-def hello_world():
-    print("Hello World!")
+f.hello_world()
+app = FastAPI()
 
-#f.hello_world1()
+@app.get("/")
 
-f.hello_world1()
-hello_world()
-print ("I am the newest change")
+async def root():
+    return {"message": "Hello World How are you?"}
